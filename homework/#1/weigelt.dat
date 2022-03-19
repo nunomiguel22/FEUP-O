@@ -1,0 +1,18 @@
+/*********************************************
+ * OPL 20.1.0.0 Data
+ * Author: filip
+ * Creation Date: 16/03/2022 at 16:33:40
+ *********************************************/
+
+SheetConnection my_sheet("weigelt.xlsx");
+
+Factories from SheetRead(my_sheet, "Factories");
+Prod_Sizes from SheetRead(my_sheet, "Prod_Sizes");
+ProdCapacity from SheetRead(my_sheet, "ProdCapacity");
+
+Profit from SheetRead(my_sheet, "Profit");
+SalesForecast from SheetRead(my_sheet, "SalesForecast");
+SpaceAvailable from SheetRead(my_sheet, "SpaceAvailable");
+SpaceRequired from SheetRead(my_sheet, "SpaceRequired");
+ 
+x to SheetWrite(my_sheet, "results"); 

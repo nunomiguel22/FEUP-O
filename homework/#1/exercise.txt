@@ -1,0 +1,21 @@
+The corporation Weigelt has three factories with excess of production capacity. Fortunately, the company 
+has a new product ready to be produced, and all three factories can produce it. Thus, some of the excess 
+of capacity can be used for the new product. 
+This product can be produced in three different sizes (large, medium, and small), with a unitary profit of 
+420€, 360€ and 300€, respectively. Factories 1, 2 and 3 have excess of capacity, which enables them to 
+produce 750, 900 and 450 units of this product per day, respectively, independently of the produced 
+size or the combination of different sizes. 
+The availability of storage space during the production process also imposes a limitation in the 
+production of the new product. Factories 1, 2 and 3 have storage capacity of 13 000, 12 000 and 5 000 
+square meters, respectively, for a production day. Each unit of large, medium, and small product 
+produced per day requires 20, 15 and 12 square meters, respectively.
+The sales forecast indicates that 900, 1200 and 750 units of large, medium, and small sizes can be sold 
+daily, respectively.
+
+(i) The management wants to know how many units of each size to produce in each factory to maximize 
+the profit. Formulate the linear programming model for this problem.
+
+(ii) In each factory, some of the employees may be fired, unless most of the excess production could be 
+used to produce the new product. To avoid firing employees, management decided that the three 
+factories should use the same percentage of the excess capacity to produce the new product. How to 
+incorporate this new constraint in the formulation?
