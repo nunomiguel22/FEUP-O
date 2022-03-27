@@ -1,0 +1,8 @@
+A conference organizer must cater for lunches for the 5 days of a conference. The organizer is faced with the
+problem of deciding on the daily supply of clean serviettes. The organizer knows that the number of conference
+attendees requiring lunch for the 5 days are 130, 220, 180, 120, and 100. The alternatives are:
+• to buy new serviettes at 25¢ each piece, or
+• to send used serviettes to the laundry where they can receive either a 48 h service at 10¢ a serviette, or
+a 24 h service at 15¢ a serviette.
+If this conference is a once-off activity with respect to the provision of serviettes, how should the organiser
+provide serviettes to minimize the total cost?
