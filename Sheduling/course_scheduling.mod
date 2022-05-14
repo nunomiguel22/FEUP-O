@@ -15,11 +15,20 @@ int seniority[instructors] =...;
 int nClasses[courses] =...;
 
 dvar int+ n[instructors][courses];
+dvar int+ penalty;
 
-maximize sum(i in fullTime, j in courses) n[i][j] * (0.5*seniority[i] + preferences[i][j]);
+maximize sum(i in fullTime, j in courses) n[i][j] * (0.5*seniority[i] + preferences[i][j]) - penalty;
 
 subject to {
 	forall (i in fullTime) sum (j in courses) n[i][j] == courseLoad[i];
 	forall (i in fullTime, j in courses) n[i][j] <= qualifications[i][j] * n[i][j];
 	forall (j in courses) sum (i in instructors) n[i][j] == nClasses[j];
+	penalty == sum (i in fullTime) ((n[i]["CSO3"] >= 3) + ((sum (j in courses) (n[i][j]>= 1)) >= 3)) * 10;
+}
+
+execute
+{
+var f=new IloOplOutputFile("res.csv");
+f.writeln(n);
+f.close();
 }
