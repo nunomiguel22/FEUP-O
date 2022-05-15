@@ -1,0 +1,56 @@
+/*********************************************
+ * OPL 20.1.0.0 Data
+ * Author: Nuno Miguel Marques
+ * Creation Date: 14/05/2022 at 17:14:20
+ *********************************************/
+ 
+n_slots = 7;
+instructors = {"Barbosa", "Castro", "Gerardo", "Lameiras", "Machado", "Pedro", "Queiros", "Soeiro", "contingent"};
+days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+courses = {"CSO1", "CSO2", "CSO3", "CSO4", "CSO5", "CSO6", "CSO7", "CSO8"};
+
+n_contingent = [0 0 1 0 0 0 1 0];
+
+//MWF
+instructors_MWF = {"Barbosa", "Castro", "Pedro", "Queiros", "contingent"};
+
+fullTime_MWF = {"Barbosa", "Castro", "Pedro", "Queiros"};
+
+
+
+n_MWF =  [
+		 	[1 0 2 0 0 0 0 0],
+         	[0 0 0 1 0 1 0 0],
+         	[0 2 1 0 0 0 0 0],
+         	[0 2 0 0 1 0 0 0]
+     ];
+     
+preferences_MWF = [
+    [1,3,3,5,5,5,0],
+    [1,1,1,1,1,5,5],
+    [1,5,5,5,3,3,0],
+    [3,5,5,5,1,3,3],
+    [1,1,1,1,1,0,0]
+];
+
+//  TuTh
+
+instructors_TuTh = {"Gerardo", "Lameiras", "Machado", "Soeiro", "contingent"};
+
+fullTime_TuTh = {"Gerardo", "Lameiras", "Machado", "Soeiro"}; 
+ 
+ preferences_TuTh = [
+    [1,5,5,1,3,5,1],
+    [1,5,5,5,3,3,0],
+    [5,0,0,0,0,0,0],
+    [1,5,5,5,5,5,0],
+    [1,1,1,1,1,1,0]
+];
+
+
+n_TuTh =  [
+         [0 0 0 0 0 2 0 1],
+         [1 2 0 0 0 0 0 0],
+         [0 0 1 0 0 0 0 0],
+         [0 0 0 0 0 3 0 0],
+     ];
