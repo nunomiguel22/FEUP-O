@@ -36,13 +36,14 @@ int seniority[instructors] =...;
 dvar boolean X[days][slots][instructors][courses];
 dvar int+ penalty_instructors;
 dvar int+ penalty_class;
+dvar int+ penalty_hours;
 
 // Objective Function
 
 maximize 
 (sum (i in mwf, j in slots, k in instructors, l in courses) X[i][j][k][l] * (0.5*seniority[k] + preferences_MWF[k][j])) + // MWF Happiness
 (sum (i in tuth, j in slots, k in instructors, l in courses) X[i][j][k][l] * (0.5*seniority[k] + preferences_TuTh[k][j])) 		// TuTh Happiness
-- (penalty_instructors + penalty_class) * 10;											// Penalties
+- (penalty_instructors + penalty_class + penalty_hours) * 5;											// Penalties
 
 // Restrictions
 
@@ -64,6 +65,11 @@ subject to {
   	
   	// Penalty for classes of same course in the same timeslot
 	penalty_class == sum (i in days, j in 1..n_slots) sum (l in courses) (sum(k in instructors) (X[i][j][k][l]) >= 2); 
+	
+	//Penalty for classes starting before 9am or ending after 4pm
+	penalty_hours == (sum (i in mwf, j in 6..7, k in instructors, l in courses) X[i][j][k][l]) + 
+		(sum (i in tuth, j in 6..7, k in instructors, l in courses) X[i][j][k][l]) +
+		(sum (i in tuth, k in instructors, l in courses) X[i][1][k][l]);
 }  
 
 
