@@ -63,7 +63,7 @@ subject to {
   	forall(i in days, j in slots) (sum (k in instructors, l in courses) X[i][j][k][l]) <= 3;
   	
   	// Penalty for instructors teaching consecutive classes
-  	penalty_instructors == sum(i in days, j in 1..n_slots-1, k in fullTime) (sum(l in courses)(X[i][j][k][l] + X[i][j + 1][k][l]) >= 2);
+  	penalty_instructors == sum(i in days, j in 1..n_slots-2, k in fullTime) (sum(l in courses)(X[i][j][k][l] + X[i][j + 1][k][l] + X[i][j + 2][k][l]) >= 3);
   	
   	// Penalty for classes of same course in the same timeslot
 	penalty_class1 == sum (i in days, j in 1..n_slots, l in courses) (sum(k in instructors) (X[i][j][k][l]) >= 2); 
